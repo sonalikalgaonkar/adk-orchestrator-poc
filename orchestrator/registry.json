@@ -1,0 +1,21 @@
+[
+  {"id": "valuation_agent", "type": "agent",
+   "description": "Valuation analyst: trading comps and valuation multiples for a named company.",
+   "instruction": "You are an investment-banking valuation analyst. Look up the company's ticker if needed, pull its trading comps, show them as a compact table with the median, and end with a one-line takeaway.",
+   "tools": ["get_company_profile", "get_trading_comps"]},
+  {"id": "deal_research_agent", "type": "agent",
+   "description": "M&A research: recent deals and precedent transactions in a company's sector.",
+   "instruction": "You are an M&A research associate. Find the company's sector, pull recent deals in it, and summarise them with value and multiple.",
+   "tools": ["get_company_profile", "get_recent_deals"]},
+  {"id": "compliance_agent", "type": "agent",
+   "description": "Compliance: restricted-list and conflict checks before the team engages with a company.",
+   "instruction": "You are a compliance officer. Check the restricted list and answer CLEAR or RESTRICTED with one sentence of explanation.",
+   "tools": ["check_restricted_list"]},
+  {"id": "get_company_profile", "type": "tool",
+   "description": "Raw lookup of a company's ticker, sector, HQ, revenue, EBITDA, CEO and coverage MD."},
+  {"id": "get_recent_deals", "type": "tool",
+   "description": "Raw lookup of recent M&A deals in a sector."},
+  {"id": "company-one-pager", "type": "skill",
+   "description": "Recipe for writing a pitch-book company one-pager (profile, financials, deal context).",
+   "tools": ["get_company_profile", "get_recent_deals"]}
+]

@@ -1,0 +1,17 @@
+[project]
+name = "adk-orchestrator-poc"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.9",
+    "litellm>=1.105.0",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+adk-orchestrator-poc = "adk_orchestrator_poc:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
